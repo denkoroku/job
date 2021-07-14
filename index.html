@@ -7,25 +7,47 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <title>Welcome Page</title>
+    <title>Hello</title>
 </head>
 
 
 <body class="text-center">
 
-    <main class="inner cover m-5">
-        <div class="background"></div>
-        <div class="blurr-box">
-
+    <main class="m-5">
+        <div>
             <h1 class="display-4">Hello</h1>
-            <p class="lead">Fancy domain</p>
-            <p>Will it ever work?
-            </p>
+            <p class="lead">Skills Selector</p>
+        </div>
+        
+        <div class="container">
+            <div class="skills m5">
+                <div class="skill" id="js" draggable = "true">JavaScript
+                </div>
+                <div class="skill" id="html" draggable="true">
+                        html
+                </div>
+                <div class="skill" id="css" draggable="true">
+                        CSS
+                </div>
+                <div class="skill" id="ruby" draggable="true">
+                        Ruby
+                </div>
+                <div class="skill" id="r" draggable="true">
+                        R
+                </div>
+                <div class="skill" id="net" draggable="true">
+                        .Net
+                </div>
+            </div>
+            <div class="drop-targets"></div>
+                <div class="box">Must Have</div>
+                <div class="box">Nice to Have</div>
+            </div>
         </div>
       
 
     </main>
-    
+    <script src="js/app.js"></script>
 </body>
 
 </html>

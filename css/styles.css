@@ -1,0 +1,45 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.drag-over {
+    border: dashed 3px red;
+}
+
+.hide {
+    display: none;
+}
+
+.skill{
+    background-color: yellow;
+    height:50px;
+    width:50px;
+    margin:5px;
+}
+
+.box{
+   height: 50vh;
+    width: 50vw;
+    border: solid 3px #ccc;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-targets{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.skills{
+    display:flex;
+    flex-direction: row;
+}
