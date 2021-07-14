@@ -1,6 +1,9 @@
-const skills = document.querySelectorAll('.skill');
-skills.forEach(skill => skill.addEventListener('dragstart', dragStart))
 
+
+const skills = document.querySelectorAll('.skill');
+skills.forEach(skill => 
+    skill.addEventListener('dragstart', dragStart)
+);
 
 function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
@@ -42,9 +45,20 @@ function drop(e) {
     const skill = e.dataTransfer.getData('text/plain');
     const draggable = document.getElementById(skill);
 
+
     // add it to the drop target
     e.target.appendChild(draggable);
 
     // display the draggable element
     draggable.classList.remove('hide');
+  
 }
+
+//when press ok 
+const essentialList = [];
+const essential = document.getElementById('essential').childNodes;
+essential.forEach(skill => { essentialList.push(skill.id) });
+
+console.log(essential)
+console.log(essentialList)
+
