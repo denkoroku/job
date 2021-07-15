@@ -4,10 +4,6 @@
     border: dashed 3px red;
 }
 
-.hide {
-    display: none;
-}
-
 .skill{
     background-color: yellow;
     height:50px;
@@ -16,7 +12,11 @@
 }
 
 .box{
-   height: 50vh;
+   
+}
+
+.destination{
+height: 50vh;
     width: 50vw;
     border: solid 3px #ccc;
     margin: 10px;

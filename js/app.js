@@ -7,9 +7,7 @@ skills.forEach(skill =>
 
 function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
-    setTimeout(() => {
-        e.target.classList.add('hide');
-    }, 0);
+    
 }
 
 
@@ -48,16 +46,18 @@ function drop(e) {
 
     // add it to the drop target
     e.target.appendChild(draggable);
-
-    // display the draggable element
-    draggable.classList.remove('hide');
   
     const essentialList = [];
     const niceList = [];
     const essential = document.getElementById('essential').childNodes;
     const nice = document.getElementById('nice').childNodes;
-    essential.forEach(skill => { essentialList.push(skill.id) });
-    nice.forEach(skill => { niceList.push(skill.id) });
+
+    essential.forEach(skill => { 
+        skill.id == undefined ? essentialList.push() : essentialList.push(skill.id)
+         });
+    
+    nice.forEach(skill => { 
+        skill.id == undefined ? niceList.push() : niceList.push(skill.id) });
 
     console.log(essentialList)
     console.log(niceList)
