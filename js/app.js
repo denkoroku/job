@@ -10,7 +10,6 @@ function dragStart(e) {
     
 }
 
-
 /* drop targets */
 const boxes = document.querySelectorAll('.box');
 
@@ -21,15 +20,15 @@ boxes.forEach(box => {
     box.addEventListener('drop', drop);
 });
 
-
 function dragEnter(e) {
     e.preventDefault();
-    e.target.classList.add('drag-over');
+    if (e.target.classList.contains("box")) { e.target.classList.add('drag-over');}
+    
 }
 
 function dragOver(e) {
     e.preventDefault();
-    e.target.classList.add('drag-over');
+    if (e.target.classList.contains("box")) { e.target.classList.add('drag-over'); }
 }
 
 function dragLeave(e) {
@@ -37,16 +36,18 @@ function dragLeave(e) {
 }
 
 function drop(e) {
+   
     e.target.classList.remove('drag-over');
 
     // get the draggable element
     const skill = e.dataTransfer.getData('text/plain');
     const draggable = document.getElementById(skill);
 
-
     // add it to the drop target
-    e.target.appendChild(draggable);
-  
+    
+    e.target.classList.contains("box")?
+        e.target.appendChild(draggable) : e.target.insertAdjacentElement('beforebegin', draggable)
+
     const essentialList = [];
     const niceList = [];
     const essential = document.getElementById('essential').childNodes;

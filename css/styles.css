@@ -29,6 +29,8 @@ height: 50vh;
 }
 
 .skills{
+    min-height:50px;
+    min-width: 50px;
     display:flex;
     flex-direction: row;
 }
