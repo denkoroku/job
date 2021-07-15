@@ -52,13 +52,16 @@ function drop(e) {
     // display the draggable element
     draggable.classList.remove('hide');
   
+    const essentialList = [];
+    const niceList = [];
+    const essential = document.getElementById('essential').childNodes;
+    const nice = document.getElementById('nice').childNodes;
+    essential.forEach(skill => { essentialList.push(skill.id) });
+    nice.forEach(skill => { niceList.push(skill.id) });
+
+    console.log(essentialList)
+    console.log(niceList)
 }
 
-//when press ok 
-const essentialList = [];
-const essential = document.getElementById('essential').childNodes;
-essential.forEach(skill => { essentialList.push(skill.id) });
 
-console.log(essential)
-console.log(essentialList)
 
