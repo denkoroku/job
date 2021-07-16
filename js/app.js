@@ -44,7 +44,6 @@ function drop(e) {
     const draggable = document.getElementById(skill);
 
     // add it to the drop target
-    
     e.target.classList.contains("box")?
         e.target.appendChild(draggable) : e.target.insertAdjacentElement('beforebegin', draggable)
 
@@ -64,5 +63,12 @@ function drop(e) {
     console.log(niceList)
 }
 
+const slider = document.getElementById("experience");
+const output = document.getElementById("years");
+output.innerHTML = slider.value; // Display the default slider value
 
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+    output.innerHTML = this.value;
+}
 
