@@ -34,7 +34,8 @@ function dragOver(e) {
 function dragLeave(e) {
     e.target.classList.remove('drag-over');
 }
-
+let essentialList = [];
+let niceList = [];
 function drop(e) {
    
     e.target.classList.remove('drag-over');
@@ -47,20 +48,21 @@ function drop(e) {
     e.target.classList.contains("box")?
         e.target.appendChild(draggable) : e.target.insertAdjacentElement('beforebegin', draggable)
 
-    const essentialList = [];
-    const niceList = [];
+    
     const essential = document.getElementById('essential').childNodes;
     const nice = document.getElementById('nice').childNodes;
 
+    essentialList = [];
+    niceList = [];
     essential.forEach(skill => { 
         skill.id == undefined ? essentialList.push() : essentialList.push(skill.id)
          });
     
     nice.forEach(skill => { 
         skill.id == undefined ? niceList.push() : niceList.push(skill.id) });
-
-    console.log(essentialList)
-    console.log(niceList)
+        
+    //console.log(essentialList)
+    //console.log(niceList)
 }
 
 const slider = document.getElementById("experience");
@@ -70,5 +72,9 @@ output.innerHTML = slider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
     output.innerHTML = this.value;
+}
+
+function feedback() {
+    alert(`You want skills in ${essentialList}`)
 }
 
