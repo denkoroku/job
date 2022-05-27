@@ -3,69 +3,129 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale = 1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel = "stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin = "anonymous">
+    <link rel ="stylesheet" type="text/css" href="css/styles.css">
     <title>Hello</title>
 </head>
 
 <body class="text-center">
-
-    <main class="m-5">
+<main class="m-5">
+    <div id = "page1">
         <div>
             <h1 class="display-4">Hello</h1>
         </div>
         
-        <div class="container">
-            <p class="lead">Skills Selector</p>
-            <div class="skills m5 drop-targets box" >
-                <div class="skill" id="js" draggable = "true">
-                    JavaScript
-                </div>
-                <div class="skill" id="html" draggable="true">
-                        html
-                </div>
-                <div class="skill" id="css" draggable="true">
-                        CSS
-                </div>
-                <div class="skill" id="ruby" draggable="true">
-                        Ruby
-                </div>
-                <div class="skill" id="r" draggable="true">
-                        R
-                </div>
-                <div class="skill" id="net" draggable="true">
-                        .Net
-                </div>
+    <div class="container">
+        <p class="lead">Skills Selector</p>
+        <div class="skills m5 drop-targets box" >
+            <div class="skill" id="js" draggable = "true">
+                JavaScript
             </div>
-            <div class="drop-targets">
-                <div class="box destination" id="essential">Must Have</div>
-                <div class="box destination" id="nice">Nice to Have</div>
+            <div class="skill" id="html" draggable="true">
+                html
+            </div>
+            <div class="skill" id="css" draggable="true">
+                CSS
+            </div>
+            <div class="skill" id="ruby" draggable="true">
+                Ruby
+            </div>
+            <div class="skill" id="r" draggable="true">
+                R
+            </div>
+            <div class="skill" id="net" draggable="true">
+                .Net
             </div>
         </div>
+        <div class="drop-targets">
+            <div class="box destination fs-4" id="essential">Must Have</div>
+            <div class="box destination fs-4" id="nice">Nice to Have</div>
+        </div>
+    </div>
+    <button onclick="feedback()" class="btn btn-success my-5">
+        Next
+    </button>
       
-        <div class="container">
+       
+    </div>  
+    <div id = "page2">
+        <div>
+            <h1 class="display-4">Experience</h1>
+        </div>
+        <div class="container my-5">
             <div class="slidecontainer">
-                <input 
-                    type="range" 
-                    min="0" 
-                    max="10.0" 
-                    value="5.0"
-                    step="1" 
-                    class="slider" 
-                    id="experience">
+                <input type="range" min="0" max="10.0" value="5.0" step="1" class="slider" id="experience">
                 </input>
-                <p class="lead">Experience: <span id="years"></span> years</p>
+                <p class="fs-4 my-3">Minimum number of years experience: <span id="years"></span> years</p>
             </div>
         </div>
+        <div class = "checkboxes text-start fs-2 m-5">
+            <p>Are any of the following types of experience important to you?</p>
+            <div class="form-check form-switch fs-4 mx-5">
+                <input class="form-check-input" type="checkbox" value="" id="largeCompany">
+                <label class="form-check-label" for="largeCompany">
+                    Has worked as dev in large company
+                </label>
+            </div>
+            <div class="form-check form-switch fs-4 mx-5">
+                <input class="form-check-input" type="checkbox" value="" id="smallCompany">
+                <label class="form-check-label" for="smallCompany">
+                    Has worked as dev in small company
+                </label>
+            </div>
+            <div class="form-check form-switch fs-4 mx-5">
+                <input class="form-check-input" type="checkbox" value="" id="startUp">
+                <label class="form-check-label" for="startUp">
+                    Has worked in a start up
+                </label>
+            </div>
+            <div class="form-check form-switch fs-4 mx-5">
+                <input class="form-check-input" type="checkbox" value="" id="agile">
+                <label class="form-check-label" for="agile">
+                    Has worked in company with Agile methodology
+                </label>
+            </div>
+        </div>
+    </div>
 
-      
-<button onclick = "feedback()" class="btn btn-success">
-    suitable?
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-success my-5" data-bs-toggle="modal" data-bs-target="#feedback">
+    Finish
 </button>
-    </main>
+
+<!-- The Modal -->
+<div class="modal" id="feedback">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Result</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</main>
     <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

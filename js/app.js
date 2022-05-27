@@ -7,7 +7,6 @@ skills.forEach(skill =>
 
 function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
-    
 }
 
 /* drop targets */
@@ -22,13 +21,15 @@ boxes.forEach(box => {
 
 function dragEnter(e) {
     e.preventDefault();
-    if (e.target.classList.contains("box")) { e.target.classList.add('drag-over');}
-    
+    if (e.target.classList.contains("box")) { 
+        e.target.classList.add('drag-over');
+    }
 }
 
 function dragOver(e) {
     e.preventDefault();
-    if (e.target.classList.contains("box")) { e.target.classList.add('drag-over'); }
+    if (e.target.classList.contains("box")) {
+         e.target.classList.add('drag-over'); }
 }
 
 function dragLeave(e) {
@@ -36,6 +37,8 @@ function dragLeave(e) {
 }
 let essentialList = [];
 let niceList = [];
+let experienceValue = 0;
+
 function drop(e) {
    
     e.target.classList.remove('drag-over');
@@ -48,12 +51,9 @@ function drop(e) {
     e.target.classList.contains("box")?
         e.target.appendChild(draggable) : e.target.insertAdjacentElement('beforebegin', draggable)
 
-    
     const essential = document.getElementById('essential').childNodes;
     const nice = document.getElementById('nice').childNodes;
-
-    essentialList = [];
-    niceList = [];
+   
     essential.forEach(skill => { 
         skill.id == undefined ? essentialList.push() : essentialList.push(skill.id)
          });
@@ -61,8 +61,6 @@ function drop(e) {
     nice.forEach(skill => { 
         skill.id == undefined ? niceList.push() : niceList.push(skill.id) });
         
-    //console.log(essentialList)
-    //console.log(niceList)
 }
 
 const slider = document.getElementById("experience");
@@ -72,9 +70,10 @@ output.innerHTML = slider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
     output.innerHTML = this.value;
+    experienceValue = this.value;
 }
 
 function feedback() {
-    alert(`You want skills in ${essentialList}`)
+    alert(`Skills essential to you are ${essentialList} and skills you would like are ${niceList} and you want ${experienceValue} years experience` )
 }
 
